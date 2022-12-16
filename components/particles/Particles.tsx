@@ -36,20 +36,17 @@ const ParticlesComponent = ({
       options={{
         background: {
           color: {
-            value:backgroundColor,
+            value: backgroundColor,
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 30,
         interactivity: {
           events: {
-            onClick: {
+            onHover: {
               enable: true,
-              mode: 'repulse',
+              mode: 'grab',
             },
-            // onHover: {
-            //   enable: true,
-            //   mode: 'push',
-            // },
+
             resize: true,
           },
           modes: {
@@ -59,6 +56,12 @@ const ParticlesComponent = ({
             repulse: {
               distance: 200,
               duration: 0.4,
+            },
+            grab: {
+              distance: 300,
+              line_linked: {
+                opacity: .5,
+              },
             },
           },
         },
@@ -89,12 +92,12 @@ const ParticlesComponent = ({
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 1200,
             },
-            value: 80,
+            value: 45,
           },
           opacity: {
-            value: 0.2,
+            value: 0.4,
           },
           shape: {
             type: 'square',

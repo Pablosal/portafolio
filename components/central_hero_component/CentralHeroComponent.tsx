@@ -1,6 +1,7 @@
 import * as React from 'react';
 import TextComponent from '../text_component/TextComponent';
 import { motion } from 'framer-motion';
+import BubleMenuComponent from '../buble_menu_component/BubleMenuComponent';
 interface CentralHeroComponentProps {
   size: number;
 }
@@ -21,15 +22,21 @@ const CentralHeroComponent = ({ size }: CentralHeroComponentProps) => {
       variants={centralVariants}
       initial={CentralMotionStates.hidden}
       animate={CentralMotionStates.coolAppear}
-      transition={{ delay: 0.2, duration: 1.2, type: 'spring', stiffness: 80 }}
+      transition={{ delay: 0.2, duration: 1, type: 'spring', stiffness: 800 }}
       className={` rounded-full bg-red-500 relative`}
       style={{ height: size, width: size }}
     >
-      <TextComponent background="bg-slate-900" text="Desarrollador Fullstack" />
+      <BubleMenuComponent size={size}></BubleMenuComponent>
       <TextComponent
         background="bg-slate-900"
-        text="Copy a generar que ira de la misma manera en Linkedin"
+        text="Desarrollador Fullstack"
+        bottom={74}
+        right={98}
       />
+      {/* <TextComponent
+        background="bg-slate-900"
+        text="Copy a generar que ira de la misma manera en Linkedin"
+      /> */}
     </motion.div>
   );
 };

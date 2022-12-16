@@ -1,22 +1,40 @@
 import * as React from 'react';
-
+import { motion } from 'framer-motion';
 interface TextProps {
   text: string | null;
   background: string | null;
+  bottom: number;
+  right: number;
 }
 
 const TextComponent = ({
   text = 'Agregue texto',
   background = 'bg-slate-900',
+  bottom,
+  right,
 }: TextProps) => {
+  const textAppear = {
+    hidden: { oppacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
   return (
-    <div
-      className={` ${background} w-[300px] border-white h-[50px]   flex items-center justify-items-center absolute bottom-0 z-50`}
+    <motion.div
+      style={{ bottom, right }}
+      className={` ${background} w-[300px] border-white h-[50px]   flex items-center justify-items-center absolute  z-50 `}
     >
-      <h1 data-testid="textComponent" className="text-white text-center w-full">
+      <motion.h1
+        variants={textAppear}
+        initial="hidden"
+        animate="visible"
+        data-testid="textComponent"
+        className="text-white text-center w-full"
+      >
         {text}
-      </h1>
-    </div>
+      </motion.h1>
+    </motion.div>
   );
 };
 

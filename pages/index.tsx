@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import CentralHeroComponent from '../components/central_hero_component/CentralHeroComponent';
+import Loading from '../components/loading/LoadingComponent';
 import ParticlesComponent from '../components/particles/Particles';
 import StickyContactComponent from '../components/sticky_contact_component/StickyContactComponent';
 import useMousePosition from '../utils/hooks/useMousePosition';
 export default function Home() {
   const mousePosition = useMousePosition();
-  let angle = Math.atan2(mousePosition.y - 199, mousePosition.x - 472);
 
   return (
     <div>
@@ -23,7 +23,7 @@ export default function Home() {
           backgroundColor="#91A6FF"
           particlesColor="#2F3061"
         />
-        <CentralHeroComponent size={400} />
+        <CentralHeroComponent size={400}  />
       </main>
 
       <footer>

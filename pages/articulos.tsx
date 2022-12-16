@@ -1,46 +1,47 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
-type Article = {
-  title: string;
-  link: string;
-  image: string;
-};
+import Layout from '../components/layout';
+import Loading from '../components/loading/LoadingComponent';
+import ParticlesComponent from '../components/particles/Particles';
+import useArticles from '../utils/hooks/useArticles';
+
 const Articulos = () => {
-  const [articulos, setArticulos] = React.useState<Article[]>([]);
+  const [articulos, loading] = useArticles();
+  console.log(loading);
 
-  React.useEffect(() => {
-    (() => {
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key':
-            '89ef5d265fmsh6859074c5aee9fdp186aafjsn9a6ac73cb9b2',
-          'X-RapidAPI-Host': 'medium2.p.rapidapi.com',
-        },
-      };
-
-      fetch('https://apimocha.com/pablo-articles/all', options)
-        .then((response) => response.json())
-        .then((response) => setArticulos(response))
-        .catch((err) => console.error(err));
-    })();
-  }, []);
-  return (
-    <>
-      <h2>Articulos</h2>
-      <div>
-        {articulos.length === 0 ? (
-          <h2>Cargando...</h2>
-        ) : (
-          articulos.map((art) => (
-            <>
-              <h2>{art.title}</h2>
-              <h2>{art.link}</h2>
-              <h2>{art.image}</h2>
-            </>
-          ))
-        )}
+  if (loading)
+    return (
+      <div className="w-full h-full flex justify-center align-center">
+        <Loading />
       </div>
-    </>
+    );
+
+  return (
+    <Layout>
+      {/* <ParticlesComponent backgroundColor="#91A6FF" particlesColor="#2F3061" /> */}
+      <h2 className="text-2xl font-bold">Articulos</h2>
+      <div
+        className="grid gap-1"
+        style={{ gridTemplateColumns: ' repeat(auto-fill,minMax(420px,1fr))' }}
+      >
+        {articulos.map((art) => (
+          <Link
+            href={art.link}
+            key={art.title}
+            className="border-black border-solid border-2 flex flex-col items-center justify-center w-[500px] h-[300px]"
+          >
+            <Image
+              src={art.image}
+              alt={art.title}
+              width={300}
+              height={400}
+            ></Image>
+            <h2 className="text-center">{art.title}</h2>
+          </Link>
+        ))}
+      </div>
+    </Layout>
   );
 };
 
