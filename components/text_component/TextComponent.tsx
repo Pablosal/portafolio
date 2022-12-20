@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 interface TextProps {
   text: string | null;
   background: string | null;
-  bottom: number;
+  top: number;
   right: number;
 }
 
 const TextComponent = ({
   text = 'Agregue texto',
   background = 'bg-slate-900',
-  bottom,
   right,
+  top,
 }: TextProps) => {
   const textAppear = {
     hidden: { oppacity: 0, y: -50 },
@@ -22,7 +22,7 @@ const TextComponent = ({
   };
   return (
     <motion.div
-      style={{ bottom, right }}
+      style={{ top, right }}
       className={` ${background} w-[300px] border-white h-[50px]   flex items-center justify-items-center absolute  z-50 `}
     >
       <motion.h1

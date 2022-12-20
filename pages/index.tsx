@@ -18,12 +18,12 @@ export default function Home() {
       <aside className="fixed right-0 mr-9 mt-9  z-50">
         <StickyContactComponent />
       </aside>
-      <main className="flex h-screen justify-center items-center ">
+      <main className="flex h-screen justify-start items-center ">
         <ParticlesComponent
           backgroundColor="#91A6FF"
           particlesColor="#2F3061"
         />
-        <CentralHeroComponent size={400}  />
+        <CentralHeroComponent size={500}  />
       </main>
 
       <footer>

@@ -1,12 +1,8 @@
 import React from 'react';
+import { Article } from '../../context/types';
 
-type Article = {
-  title: string;
-  link: string;
-  image: string;
-};
 const useArticles = () => {
-  const [articulos, setArticulos] = React.useState<Article[]>([]);
+  const [articulos, setArticulos] = React.useState<Article[] | []>([]);
   const [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
     (() => {
@@ -25,8 +21,8 @@ const useArticles = () => {
           setLoading(false);
         })
         .catch((err) => {
-            console.error(err);
-            setLoading(false);
+          console.error(err);
+          setLoading(false);
         });
     })();
   }, []);

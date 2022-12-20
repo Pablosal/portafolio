@@ -24,14 +24,19 @@ const CentralHeroComponent = ({ size }: CentralHeroComponentProps) => {
       animate={CentralMotionStates.coolAppear}
       transition={{ delay: 0.2, duration: 1, type: 'spring', stiffness: 800 }}
       className={` rounded-full bg-red-500 relative`}
-      style={{ height: size, width: size }}
+      style={{
+        height: size,
+        width: size,
+        background:
+          'linear-gradient(140.36deg, rgba(212, 208, 255, 0.31) 14.9%, rgba(39, 25, 201, 0.63) 88.91%)',
+      }}
     >
       <BubleMenuComponent size={size}></BubleMenuComponent>
       <TextComponent
         background="bg-slate-900"
         text="Desarrollador Fullstack"
-        bottom={74}
-        right={98}
+        top={62}
+        right={-305}
       />
       {/* <TextComponent
         background="bg-slate-900"

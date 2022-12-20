@@ -40,7 +40,7 @@ const Loading = () => {
         animate={'animationOne'}
       ></motion.div>
       <motion.div
-        className="rounded h-5 w-5 bg-white"
+        className="rounded h-5 w-5 bg-lime-600"
         variants={loaderVariants}
         animate={'animationTwo'}
       ></motion.div>
