@@ -31,6 +31,7 @@ const ParticlesComponent = ({
   return (
     <Particles
       id="tsparticles"
+      className='z-0'
       init={particlesInit}
       loaded={particlesLoaded}
       options={{

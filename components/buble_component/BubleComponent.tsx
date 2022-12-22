@@ -2,8 +2,6 @@ import Link from 'next/link';
 import * as React from 'react';
 import { motion } from 'framer-motion';
 interface IBubleComponent {
-  left: number;
-  top: number;
   linkTo: string;
   name: string;
   children: JSX.Element;
@@ -11,8 +9,6 @@ interface IBubleComponent {
 }
 
 const BubleComponent = ({
-  left,
-  top,
   linkTo = '/',
   name,
   children,
@@ -21,24 +17,23 @@ const BubleComponent = ({
   return (
     <Link href={linkTo}>
       <motion.div
+        data-tooltip-target="tooltip-default"
         initial={{ boxShadow: 'none' }}
-        whileHover={{ boxShadow: '0px 0px 33px -19px rgba(255,241,82,1)' }}
-        transition={{ duration: 0 - 5, type: 'spring', stiffness: 100 }}
-        className={` rounded-full absolute top-0  bg-blue-800 flex justify-center align-center flex-col`}
+        whileHover={{
+          background:
+            'radial-gradient(100% 77.95% at 55% 10%, #F5EE9E 60%, #F49E4C 100%)',
+          backdropFilter: 'blur(6px)',
+        }}
+        className="rounded-full  top-0  bg-blue-800 flex justify-center align-center flex-col items-center"
         style={{
-          top,
-          left,
           height: bubbleSize,
           width: bubbleSize,
-          // transform: ' rotate(20deg)',
           background:
             'radial-gradient(77.95% 77.95% at 26.67% 10%, rgba(255, 255, 255, 0.42) 0%, rgba(196, 196, 196, 0.06) 100%)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(6px)',
         }}
       >
         {children}
-        <span>{name}</span>
       </motion.div>
     </Link>
   );

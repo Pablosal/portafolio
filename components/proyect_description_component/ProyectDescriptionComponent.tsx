@@ -4,7 +4,10 @@ import cellphoneProyect from '/public/images/proovmobile.jpg';
 
 const ProyectDescriptionComponent = () => {
   return (
-    <div className="grid grid-cols-2 w-[800px]">
+    <div
+      style={{ backdropFilter: 'blur(5px)' }}
+      className="grid grid-cols-2  backdrop  w-2/5 bg-white bg-opacity-10 rounded p-3 text-white  border-gray-300 shadow-lg"
+    >
       <div className="image--container">
         <Image src={cellphoneProyect} alt="Proyecto"></Image>
       </div>
@@ -26,7 +29,7 @@ const ProyectDescriptionComponent = () => {
           </p>
         </div>
         <div className="button--to h-1/3 flex justify-center align-center flex-col">
-          <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+          <button className="hover:bg-transparent bg-blue-500 hover:text-blue-700 font-semibold text-white py-2 px-4 border hover:border-blue-500 border-transparent rounded">
             Ver el Proyecto
           </button>
         </div>

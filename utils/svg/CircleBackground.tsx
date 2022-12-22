@@ -1,6 +1,6 @@
 import * as React from 'react';
 const CircleBackground = (props: React.PropsWithChildren) => (
-  <svg className='absolute top-[75px] right-[70px]'
+  <svg
     width={295}
     height={307}
     fill="none"

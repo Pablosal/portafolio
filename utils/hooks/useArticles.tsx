@@ -3,16 +3,11 @@ import { Article } from '../../context/types';
 
 const useArticles = () => {
   const [articulos, setArticulos] = React.useState<Article[] | []>([]);
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<Boolean>(true);
   React.useEffect(() => {
     (() => {
       const options = {
         method: 'GET',
-        headers: {
-          'X-RapidAPI-Key':
-            '89ef5d265fmsh6859074c5aee9fdp186aafjsn9a6ac73cb9b2',
-          'X-RapidAPI-Host': 'medium2.p.rapidapi.com',
-        },
       };
       fetch('https://apimocha.com/pablo-articles/all', options)
         .then((response) => response.json())
@@ -27,7 +22,7 @@ const useArticles = () => {
     })();
   }, []);
 
-  return [articulos, loading];
+  return [articulos, loading] as const;
 };
 
 export default useArticles;
