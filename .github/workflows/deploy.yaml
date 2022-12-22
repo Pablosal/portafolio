@@ -1,9 +1,11 @@
 name: deploy portfolio webpage
-on:  
+on:
   push:
-  pull_request:
     branches:
       - main
+  pull_request:
+      types: [ready_for_review]
+
 
 jobs:
   build:
