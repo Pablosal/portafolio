@@ -1,10 +1,10 @@
 {
   "spanish": {
-    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks.",
+    "aboutMe": "Mi nombre es Pablo Salgado y he trabajado como desarrollador fullstack por el ultimo año, disfruto crear aplicaciones modernas y escalables para la web,y tengo experiencia trabajando en el frontend con React JS, Next Js y Node Js",
     "experience": {}
   },
   "english": {
-    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks.",
+    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past year. I have a strong passion for building modern and scalable web applications, and I have experience working with as a Javascript Developer with React JS, Next Js and Node JS.",
     "experience": {}
   }
 }
