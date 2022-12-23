@@ -1,8 +1,10 @@
 {
-    "spanish":{
-
-    },
-    "english":{
-        
-    }
+  "spanish": {
+    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks.",
+    "experience": {}
+  },
+  "english": {
+    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks.",
+    "experience": {}
+  }
 }
