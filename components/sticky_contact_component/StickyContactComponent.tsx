@@ -5,16 +5,16 @@ import GithubIcon from '/public/icons/github-svgrepo-com.svg';
 import EmailIcon from '/public/icons/email-svgrepo-com.svg';
 const StickyContactComponent = () => {
   return (
-    <div className="h-[100vh] rounded-[12px] w-[220px] center-verticaly">
+    <div className="sm:h-[100vh]  sm:w-[220px] center-verticaly  w-[56px]">
       <div className="center-verticaly h-3/6  gap-6">
         <IconComponent path="https://www.linkedin.com/in/sergio-pablo-salgado/">
           <LinkedinIcon />
         </IconComponent>
         <IconComponent path="https://github.com/Pablosal">
-          <GithubIcon  />
+          <GithubIcon />
         </IconComponent>
-        <IconComponent path="https://www.linkedin.com/in/sergio-pablo-salgado/" >
-          <EmailIcon/>
+        <IconComponent path="https://www.linkedin.com/in/sergio-pablo-salgado/">
+          <EmailIcon />
         </IconComponent>
       </div>
     </div>

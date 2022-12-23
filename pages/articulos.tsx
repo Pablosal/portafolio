@@ -5,8 +5,9 @@ import { Article } from '../context/types';
 import useArticles from '../utils/hooks/useArticles';
 import { AnimatePresence, motion } from 'framer-motion';
 import BackButton from '../components/back_button/BackButton';
+import articulos from '../data.json';
 const Articulos = () => {
-  const [articulos, loading] = useArticles();
+  // const [articulos, loading] = useArticles();
   const containerVariants = {
     initial: { y: 200 },
     animate: { y: 20 },
@@ -20,20 +21,19 @@ const Articulos = () => {
       backgroundColor: 'rgba(0,0,0,2)',
     },
   };
-  if (loading)
-    return (
-      <div className="w-screen h-screen flex justify-center items-center z-50">
-        <BackButton />
-        <Loading />
-      </div>
-    );
+  // if (loading)
+  //   return (
+  //     <div className="w-screen h-screen flex justify-center items-center z-50">
+  //       <BackButton />
+  //       <Loading />
+  //     </div>
+  //   );
 
   return (
     <div className="z-50 center-verticaly h-screen">
       <BackButton />
       <h2 className="font-bold text-2xl text-white m-8'">Articulos</h2>
-      <div className="flex gap-4">
-        {/*  */}
+      <div className="flex gap-4 center-verticaly ">
         {articulos.map((art: Article, idx: number) => (
           <AnimatePresence key={art.title}>
             <motion.div

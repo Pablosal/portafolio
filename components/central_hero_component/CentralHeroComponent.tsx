@@ -1,11 +1,11 @@
 import * as React from 'react';
-import TextComponent from '../text_component/TextComponent';
 import { motion } from 'framer-motion';
 import CircleBackground from '../../utils/svg/CircleBackground';
-
-import BubleMenuComponent from '../buble_menu_component/BubleMenuComponent';
+import mobile_guy from '/public/images/mobile_gou.png';
+import useMediaQuery from '../../utils/hooks/useMediaQuery';
+import Image from 'next/image';
 interface CentralHeroComponentProps {
-  size: number;
+  size: number | string;
 }
 enum CentralMotionStates {
   hidden = 'hidden',
@@ -19,22 +19,28 @@ const CentralHeroComponent = ({ size }: CentralHeroComponentProps) => {
     },
     coolAppear: { opacity: 1, scale: 1.8 },
   };
+  const matches = useMediaQuery('(min-width: 640px)');
+
   return (
     <motion.div
       variants={centralVariants}
       initial={CentralMotionStates.hidden}
       animate={CentralMotionStates.coolAppear}
-      transition={{ delay: 0.8, duration: 0.9, type: 'spring'}}
+      transition={{ delay: 0.8, duration: 0.9, type: 'spring' }}
       className={`rounded-full bg-red-500  flex justify-center items-center flex-col `}
       style={{
-        position:"absolute",
+        position: 'absolute',
         height: size,
         width: size,
         background:
           'linear-gradient(140.36deg, rgba(1, 255, 72, 0.15) 14.9%, #FF0101 88.91%)',
       }}
     >
-      <CircleBackground />
+      {matches ? (
+        <CircleBackground />
+      ) : (
+        <Image src={mobile_guy} alt="heroPart" />
+      )}
     </motion.div>
   );
 };

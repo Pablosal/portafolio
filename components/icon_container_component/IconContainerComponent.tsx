@@ -19,7 +19,7 @@ const IconContainerComponent = ({ children, path }: IIconComponent) => {
           type: 'spring',
           stiffness: 80,
         }}
-        className="rounded-full h-[45px] w-[45px] bg-white"
+        className="rounded-full h-[45px] w-[45px] bg-white center-verticaly" 
       >
         {children}
       </motion.div>

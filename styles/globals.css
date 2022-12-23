@@ -25,5 +25,11 @@ a {
     align-items: center;
     flex-direction: column;
   }
+  .center-horizontaly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
   /* ... */
 }

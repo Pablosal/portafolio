@@ -6,7 +6,7 @@ const ProyectDescriptionComponent = () => {
   return (
     <div
       style={{ backdropFilter: 'blur(5px)' }}
-      className="grid grid-cols-2  backdrop  w-2/5 bg-white bg-opacity-10 rounded p-3 text-white  border-gray-300 shadow-lg"
+      className="w-3/4 sm:grid grid-cols-2  backdrop  sm:w-2/5 bg-white bg-opacity-10 rounded p-3 text-white  border-gray-300 shadow-lg"
     >
       <div className="image--container">
         <Image src={cellphoneProyect} alt="Proyecto"></Image>
