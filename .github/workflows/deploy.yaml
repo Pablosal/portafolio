@@ -1,5 +1,12 @@
-on: push
-name: deploy
+name: deploy portfolio webpage
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+      types: [ready_for_review]
+
+
 jobs:
   build:
     name: Build and Test
@@ -25,7 +32,6 @@ jobs:
       - name: Cache build
         uses: actions/cache@v3
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
             ~/.npm
             ${{ github.workspace }}/.next/cache
@@ -42,3 +48,10 @@ jobs:
 
       - name: Test
         run: npm run test
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} 
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} 
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

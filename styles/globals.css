@@ -17,3 +17,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .center-verticaly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* ... */
+}
