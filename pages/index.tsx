@@ -1,9 +1,22 @@
+'use client';
 import Head from 'next/head';
 import BubleMenuComponent from '../components/buble_menu_component/BubleMenuComponent';
-import CentralHeroComponent from '../components/central_hero_component/CentralHeroComponent';
 import StickyContactComponent from '../components/sticky_contact_component/StickyContactComponent';
 import TextComponent from '../components/text_component/TextComponent';
 import useMediaQuery from '../utils/hooks/useMediaQuery';
+import dynamic from 'next/dynamic';
+const LazyCentralHeroComponent = dynamic(
+  () => import('../components/central_hero_component/CentralHeroComponent'),
+  {
+    ssr: false,
+  }
+);
+const LazyQueryTitle = dynamic(
+  () => import('../components/query_title/QueryTitleComponent'),
+  {
+    ssr: false,
+  }
+);
 export default function Home() {
   const matches = useMediaQuery('(min-width: 640px)');
 
@@ -20,11 +33,11 @@ export default function Home() {
       </Head>
       <main className="sm:h-screen sm:grid sm:grid-cols-3 sm:items-center sm:w-full ">
         <div className=" sm:center-verticaly h-full absolute left-[25px] top-[-25px] flex sm:relative z-50">
-          {matches && <h3 className="text-2xl text-white m-8">Mi Contenido</h3>}
+          <LazyQueryTitle />
           <BubleMenuComponent></BubleMenuComponent>
         </div>
         <div className="center-verticaly relative ">
-          <CentralHeroComponent size={matches ? 450 : 240} />
+          <LazyCentralHeroComponent />
           <TextComponent
             text="My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks."
             top={241}

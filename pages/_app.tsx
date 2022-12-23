@@ -27,9 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <ParticlesComponent backgroundColor="#1A1A1C" particlesColor="#fff" />
       <motion.div
         key={router.route}
-        initial={matches ? 'initial' : ''}
-        animate={matches ? 'animate' : ''}
-        exit={matches ? 'exit' : ''}
+        initial={'initial'}
+        animate={'animate'}
+        exit={'exit'}
         variants={wrapperVariants}
         className="relative"
       >

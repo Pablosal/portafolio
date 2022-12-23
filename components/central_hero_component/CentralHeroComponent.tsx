@@ -4,14 +4,12 @@ import CircleBackground from '../../utils/svg/CircleBackground';
 import mobile_guy from '/public/images/mobile_gou.png';
 import useMediaQuery from '../../utils/hooks/useMediaQuery';
 import Image from 'next/image';
-interface CentralHeroComponentProps {
-  size: number | string;
-}
+
 enum CentralMotionStates {
   hidden = 'hidden',
   coolAppear = 'coolAppear',
 }
-const CentralHeroComponent = ({ size }: CentralHeroComponentProps) => {
+const CentralHeroComponent = () => {
   const centralVariants = {
     hidden: {
       opacity: 0.1,
@@ -30,8 +28,8 @@ const CentralHeroComponent = ({ size }: CentralHeroComponentProps) => {
       className={`rounded-full bg-red-500  flex justify-center items-center flex-col `}
       style={{
         position: 'absolute',
-        height: size,
-        width: size,
+        height: matches ? 450 : 240,
+        width: matches ? 450 : 240,
         background:
           'linear-gradient(140.36deg, rgba(1, 255, 72, 0.15) 14.9%, #FF0101 88.91%)',
       }}
