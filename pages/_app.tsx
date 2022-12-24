@@ -4,9 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import ParticlesComponent from '../components/particles/Particles';
-import useMediaQuery from '../utils/hooks/useMediaQuery';
 export default function App({ Component, pageProps }: AppProps) {
-  const matches = useMediaQuery('(min-width: 640px)');
   const router = useRouter();
   const wrapperVariants = {
     initial: {

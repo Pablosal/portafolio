@@ -3,8 +3,11 @@ import Head from 'next/head';
 import BubleMenuComponent from '../components/buble_menu_component/BubleMenuComponent';
 import StickyContactComponent from '../components/sticky_contact_component/StickyContactComponent';
 import TextComponent from '../components/text_component/TextComponent';
-import useMediaQuery from '../utils/hooks/useMediaQuery';
 import dynamic from 'next/dynamic';
+
+import ExperienceLayout from '../components/experience_layout/ExperienceLayout';
+import UseModal from '../utils/hooks/useModal';
+
 const LazyCentralHeroComponent = dynamic(
   () => import('../components/central_hero_component/CentralHeroComponent'),
   {
@@ -17,8 +20,9 @@ const LazyQueryTitle = dynamic(
     ssr: false,
   }
 );
+
 export default function Home() {
-  const matches = useMediaQuery('(min-width: 640px)');
+  const [openModal, RenderModalSection, openModalToScreen] = UseModal();
 
   return (
     <div className="h-screen center-verticaly">
@@ -32,9 +36,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="sm:h-screen sm:grid sm:grid-cols-3 sm:items-center sm:w-full ">
+        {RenderModalSection(
+          openModal,
+          () => (
+            <ExperienceLayout />
+          ),
+          { title: 'Mi experiencia', showFooter: true }
+        )}
         <div className=" sm:center-verticaly h-full absolute left-[25px] top-[-25px] flex sm:relative z-50">
           <LazyQueryTitle />
-          <BubleMenuComponent></BubleMenuComponent>
+          <BubleMenuComponent
+            openModalToScreen={openModalToScreen}
+          ></BubleMenuComponent>
         </div>
         <div className="center-verticaly relative ">
           <LazyCentralHeroComponent />

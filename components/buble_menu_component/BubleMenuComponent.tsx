@@ -12,7 +12,12 @@ const LazyBubleComponent = dynamic(
     ssr: false,
   }
 );
-const BubleMenuComponent = () => {
+
+interface BubleMenuComponentProps {
+  openModalToScreen: () => void;
+}
+
+const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
   const animationContext = React.useContext(AnimationContext);
   const matches = useMediaQuery('(min-width: 640px)');
   const bubbleSize = matches ? 95 : 65;
@@ -27,21 +32,19 @@ const BubleMenuComponent = () => {
       >
         <LazyBubleComponent
           linkTo="/articulos"
-          name="Articulos"
           bubbleSize={bubbleSize}
         >
           <ArticlesIcon style={{ width: iconSize }} />
         </LazyBubleComponent>
         <LazyBubleComponent
           linkTo="/proyectos"
-          name="Proyectos"
           bubbleSize={bubbleSize}
         >
           <ProyectsIcon style={{ width: iconSize }} />
         </LazyBubleComponent>
         <LazyBubleComponent
+          openModalToScreen={openModalToScreen}
           linkTo="/"
-          name="Experiencia"
           bubbleSize={bubbleSize}
         >
           <AboutMeIcon style={{ width: iconSize }} />
