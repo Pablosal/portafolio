@@ -30,7 +30,12 @@ const UseModal = () => {
     );
   };
 
-  return [openModal, RenderModalSection, openModalToScreen] as const;
+  return [
+    openModal,
+    RenderModalSection,
+    openModalToScreen,
+    closeModalToScreen,
+  ] as const;
 };
 
 export default UseModal;

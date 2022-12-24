@@ -6,13 +6,14 @@ import EmailIcon from '/public/icons/email-svgrepo-com.svg';
 import UseModal from '../../utils/hooks/useModal';
 import ContactForm from '../contact_form/ContactForm';
 const StickyContactComponent = () => {
-  const [openModal, RenderModalSection, openModalToScreen] = UseModal();
+  const [openModal, RenderModalSection, openModalToScreen, closeModalToScreen] =
+    UseModal();
   return (
     <>
       {RenderModalSection(
         openModal,
         () => (
-          <ContactForm />
+          <ContactForm closeModalToScreen={closeModalToScreen} />
         ),
         { title: 'Hablemos', showFooter: false }
       )}

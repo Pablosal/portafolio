@@ -35,6 +35,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        with:
+          NEXT_PUBLIC_EMAIL_JS_SERVICE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_SERVICE }} 
+          NEXT_PUBLIC_EMAIL_JS_TEMPLATE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_TEMPLATE }} 
+          NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY }}
 
       - name: Test
         run: npm run test
