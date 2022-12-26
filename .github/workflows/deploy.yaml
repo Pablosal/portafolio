@@ -3,6 +3,14 @@ on:
   push:
     branches:
       - main
+
+env:
+  NEXT_PUBLIC_EMAIL_JS_SERVICE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_SERVICE }} 
+  NEXT_PUBLIC_EMAIL_JS_TEMPLATE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_TEMPLATE }} 
+  NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY }}
+  NEXT_PUBLIC_BD_SUPABASE_SECRET: ${{ secrets.NEXT_PUBLIC_BD_SUPABASE_SECRET }}
+  NEXT_PUBLIC_URL_SUPABASE_PROJECT: ${{ secrets.NEXT_PUBLIC_URL_SUPABASE_PROJECT }}
+
 jobs:
   build:
     name: Build and Test
@@ -34,13 +42,8 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
-        with:
-          NEXT_PUBLIC_EMAIL_JS_SERVICE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_SERVICE }} 
-          NEXT_PUBLIC_EMAIL_JS_TEMPLATE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_TEMPLATE }} 
-          NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY }}
-          NEXT_PUBLIC_BD_SUPABASE_SECRET: ${{ secrets.NEXT_PUBLIC_BD_SUPABASE_SECRET }}
-          NEXT_PUBLIC_URL_SUPABASE_PROJECT: ${{ secrets.NEXT_PUBLIC_URL_SUPABASE_PROJECT }}
+        run: $NEXT_PUBLIC_EMAIL_JS_SERVICE $NEXT_PUBLIC_EMAIL_JS_TEMPLATE $NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY $NEXT_PUBLIC_BD_SUPABASE_SECRET $NEXT_PUBLIC_URL_SUPABASE_PROJECT npm run build
+      
 
       - name: Test
         run: npm run test
