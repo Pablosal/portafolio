@@ -16,12 +16,10 @@ const ContactForm = ({ closeModalToScreen }) => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           alert('Mensaje ha sido enviado, muchas gracias');
           closeModalToScreen();
         },
         (error) => {
-          console.log(error.text);
           closeModalToScreen();
           alert(
             'Ha habido un error en el envio del mensaje, pronto sera arreglado'
@@ -32,9 +30,7 @@ const ContactForm = ({ closeModalToScreen }) => {
   const handleChange = (e) => {
     setFormParams({ ...formParams, [e.target.name]: e.target.value });
   };
-  React.useEffect(() => {
-    console.log(formParams);
-  }, [formParams]);
+
   return (
     <form onSubmit={sendEmail} className="space-y-8">
       <div>

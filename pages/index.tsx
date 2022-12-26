@@ -4,7 +4,7 @@ import BubleMenuComponent from '../components/buble_menu_component/BubleMenuComp
 import StickyContactComponent from '../components/sticky_contact_component/StickyContactComponent';
 import TextComponent from '../components/text_component/TextComponent';
 import dynamic from 'next/dynamic';
-
+import * as React from 'react';
 import ExperienceLayout from '../components/experience_layout/ExperienceLayout';
 import UseModal from '../utils/hooks/useModal';
 

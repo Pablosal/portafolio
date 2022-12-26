@@ -2,7 +2,7 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import ArticlesIcon from '/public/icons/diary-svgrepo-com.svg';
 import AboutMeIcon from '/public/icons/hand-svgrepo-com.svg';
-import ProyectsIcon from '/public/icons/screen-svgrepo-com.svg';
+import ProjectsIcon from '/public/icons/screen-svgrepo-com.svg';
 import AnimationContext from '../../context/contexts/animationContext';
 import useMediaQuery from '../../utils/hooks/useMediaQuery';
 import dynamic from 'next/dynamic';
@@ -40,7 +40,7 @@ const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
           linkTo="/proyectos"
           bubbleSize={bubbleSize}
         >
-          <ProyectsIcon style={{ width: iconSize }} />
+          <ProjectsIcon style={{ width: iconSize }} />
         </LazyBubleComponent>
         <LazyBubleComponent
           openModalToScreen={openModalToScreen}

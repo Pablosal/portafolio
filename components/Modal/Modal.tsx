@@ -65,13 +65,15 @@ const Modal = ({ closeModalToScreen, render, title, showFooter }: IModal) => {
           </div>
           {showFooter && (
             <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-              <button
+              <a
+                href=" https://drive.google.com/uc?export=download&id=1Go7ZFQ0J3fsjrJ-aR3nARZZRdSiaTE4_"
+                download
                 data-modal-toggle="defaultModal"
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Descargar CV
-              </button>
+              </a>
               <button
                 onClick={closeModalToScreen}
                 data-modal-toggle="defaultModal"
