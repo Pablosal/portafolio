@@ -3,7 +3,11 @@ import * as React from 'react';
 import { Article } from '../context/types';
 import { AnimatePresence, motion } from 'framer-motion';
 import BackButton from '../components/back_button/BackButton';
-import supabase from '../utils/libs/supabase';
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_URL_SUPABASE_PROJECT,
+  process.env.NEXT_PUBLIC_BD_SUPABASE_SECRET
+);
 const Articulos = ({ articles }) => {
   const containerVariants = {
     initial: { y: 200 },

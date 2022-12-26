@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackButton from '../components/back_button/BackButton';
-import supabase from '../utils/libs/supabase';
 import { project } from '../context/types';
 import ProjectDescriptionComponent from '../components/project_description_component/ProjectDescriptionComponent';
-
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_URL_SUPABASE_PROJECT,
+  process.env.NEXT_PUBLIC_BD_SUPABASE_SECRET
+);
 const projectos = ({ projects }) => {
   return (
     <div className="center-verticaly">
@@ -51,7 +54,7 @@ export async function getStaticProps(context) {
     return projects;
   };
   const proyectos = await getprojects();
-console.log(proyectos)
+  console.log(proyectos);
   return {
     props: { projects: proyectos }, // will be passed to the page component as props
   };
