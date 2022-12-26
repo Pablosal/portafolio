@@ -37,8 +37,6 @@ jobs:
       - name: Build
         run: NEXT_PUBLIC_EMAIL_JS_SERVICE=${{ secrets.NEXT_PUBLIC_EMAIL_JS_SERVICE }} NEXT_PUBLIC_EMAIL_JS_TEMPLATE=${{ secrets.NEXT_PUBLIC_EMAIL_JS_TEMPLATE }} NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY }} NEXT_PUBLIC_BD_SUPABASE_SECRET=${{ secrets.NEXT_PUBLIC_BD_SUPABASE_SECRET }} NEXT_PUBLIC_URL_SUPABASE_PROJECT=${{ secrets.NEXT_PUBLIC_URL_SUPABASE_PROJECT }} npm run build
 
-      - name: Test
-        run: npm run test
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
