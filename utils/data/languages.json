@@ -1,8 +1,60 @@
 {
-    "spanish":{
-
-    },
-    "english":{
-        
-    }
+  "spanish": {
+    "aboutMe": "Mi nombre es Pablo Salgado y he trabajado como desarrollador fullstack por el ultimo año, disfruto crear aplicaciones modernas y escalables para la web,y tengo experiencia trabajando en el frontend con React JS, Next Js y Node Js",
+    "experience": [
+      {
+        "title": "Desarrollador Full Stack Jr para Dentic",
+        "subtitle": "jun. 2021 - ago. 2022 [Temuco, Chile] [Marketplace de insumos dentales]        ",
+        "responsabilities": [
+          "Crear y mantener una aplicación web eccommerce en el front end con Javascript  y React permitiendo a los usuarios comprar insumos dentales a través de la pasarela Mercado Pago",
+          "Crear y mantener el back end por medio de tecnologías serverless en AWS usando el framework Serverless y Node Js ",
+          "Mantener la coordinación de tecnologías de AWS como AWS Lambda, AWS DynamoDB, AWS SNS, AWS Cognito.",
+          "Crear la documentación de las aplicaciones tanto en el front como en el back end",
+          "Crear y actualizar nuevos workflows creados en github actions para el testeo y build de la aplicación con los distintos microservicios"
+        ],
+        "keyPoints": [
+          "Desarrollar una aplicación completa tanto en el front end utilizando React y en el back end dependiendo de servicios en la nube de AWS para la compra y venta de insumos dentales",
+          "Unir distintas apis para obtener los productos de distintos CMS"
+        ]
+      },
+      {
+        "title": "Instructor en Udemy sobre cursos de Javascript.",
+        "subtitle": "nov. 2020 - ene. 2021 [Temuco, Chile] [Instructor]",
+        "responsabilities": [
+          "Crear, guiar y editar curso de expresiones regulares "
+        ],
+        "keyPoints": [
+          "Obtener más de 11.000 estudiantes y valoraciones sobre 4.5 estrellas"
+        ]
+      }
+    ]
+  },
+  "english": {
+    "aboutMe": "My name is Pablo Salgado and I have been working as a Full Stack Developer for the past year. I have a strong passion for building modern and scalable web applications, and I have experience working with as a Javascript Developer with React JS, Next Js and Node JS.",
+    "experience": [
+      {
+        "title": "Full Stack Jr Developer for Dentic",
+        "subtitle": "jun. 2021 - ago. 2022 [Temuco, Chile] [Dental Supplies Marketplace]        ",
+        "responsabilities": [
+          "Create and maintain a front end eccommerce web application with Javascript and React allowing users to purchase dental supplies through the Mercado Pago gateway.",
+          "Create and maintain the back end through serverless technologies on AWS using the Serverless framework and Node Js.",
+          "Maintain coordination of AWS technologies such as AWS Lambda, AWS DynamoDB, AWS SNS, AWS Cognito.",
+          "Create application documentation for both the front and the back end.",
+          "Create and update new workflows created in github actions for testing and building the application with the different microservices."
+        ],
+        "keyPoints": [
+          "Develop a complete application both on the front end using React and on the back end relying on AWS cloud services for the purchase and sale of dental supplies.",
+          "Linking different apis to get the products of different CMSs"
+        ]
+      },
+      {
+        "title": "Udemy instructor on Javascript courses.",
+        "subtitle": "nov. 2020 - ene. 2021 [Temuco, Chile] [Instructor]",
+        "responsabilities": [
+          "Creating, guiding and editing regular expression courses "
+        ],
+        "keyPoints": ["Get over 11,000 students and ratings out of 4.5 stars"]
+      }
+    ]
+  }
 }

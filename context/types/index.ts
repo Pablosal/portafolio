@@ -6,7 +6,19 @@ export const actions = {
 }
 
 export type Article = {
-    title: string;
-    link: string;
-    image: string;
+    article_name: string;
+    article_link: string;
+    article_image: string;
+    created_at: string;
+    id: string;
+};
+export type project = {
+    proyect_name: string;
+    proyect_description: string;
+    proyect_technologies_description: string;
+    proyect_link: string;
+    proyect_image: string;
+    proyect_technologies: string;
+    created_at: string;
+    id: string;
 };

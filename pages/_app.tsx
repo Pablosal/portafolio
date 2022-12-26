@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         animate={'animate'}
         exit={'exit'}
         variants={wrapperVariants}
+        className="relative"
       >
         <Component {...pageProps} />
       </motion.div>

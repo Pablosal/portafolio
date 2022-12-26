@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import * as React from 'react';
-import Loading from '../components/loading/LoadingComponent';
 import { Article } from '../context/types';
-import useArticles from '../utils/hooks/useArticles';
 import { AnimatePresence, motion } from 'framer-motion';
 import BackButton from '../components/back_button/BackButton';
-const Articulos = () => {
-  const [articulos, loading] = useArticles();
+import supabase from '../utils/libs/supabase';
+const Articulos = ({ articles }) => {
   const containerVariants = {
     initial: { y: 200 },
     animate: { y: 20 },
@@ -20,22 +18,14 @@ const Articulos = () => {
       backgroundColor: 'rgba(0,0,0,2)',
     },
   };
-  if (loading)
-    return (
-      <div className="w-screen h-screen flex justify-center items-center z-50">
-        <BackButton />
-        <Loading />
-      </div>
-    );
 
   return (
-    <div className="z-50 center-verticaly h-screen">
+    <div className="z-50 center-verticaly min-h-screen">
       <BackButton />
-      <h2 className="font-bold text-2xl text-white m-8'">Articulos</h2>
-      <div className="flex gap-4">
-        {/*  */}
-        {articulos.map((art: Article, idx: number) => (
-          <AnimatePresence key={art.title}>
+      <h2 className="font-bold text-2xl text-white mt-24'">Articulos</h2>
+      <div className="flex gap-4 center-verticaly ">
+        {articles.map((art: Article, idx: number) => (
+          <AnimatePresence key={art.article_name}>
             <motion.div
               className="relative rounded-2xl"
               initial={'initial'}
@@ -49,10 +39,10 @@ const Articulos = () => {
               }}
             >
               <Link
-                href={art.link}
-                key={art.title}
+                href={art.article_link}
+                key={art.id}
                 style={{
-                  background: `url(${art.image}) no-repeat center center fixed`,
+                  background: `url(${art.article_image}) no-repeat center center fixed`,
                   backgroundSize: 'cover',
                 }}
                 className="border-black border-solid border-2 flex flex-col items-center justify-center w-[500px] h-[300px] bg-white rounded-2xl"
@@ -65,7 +55,7 @@ const Articulos = () => {
                 ></motion.div>
 
                 <h2 className="text-center font-bold text-2xl text-white m-8 z-20">
-                  {art.title}
+                  {art.article_name}
                 </h2>
               </Link>
             </motion.div>
@@ -75,5 +65,17 @@ const Articulos = () => {
     </div>
   );
 };
+export async function getStaticProps(context) {
+  const getArticles = async () => {
+    const { data: articles, error } = await supabase
+      .from('articles')
+      .select('*');
+    return articles;
+  };
+  const articulos = await getArticles();
 
+  return {
+    props: { articles: articulos }, // will be passed to the page component as props
+  };
+}
 export default Articulos;

@@ -3,21 +3,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
-      types: [ready_for_review]
-
-
 jobs:
   build:
     name: Build and Test
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    #  TURBO_REMOTE_ONLY: true
-
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -45,6 +35,12 @@ jobs:
 
       - name: Build
         run: npm run build
+        with:
+          NEXT_PUBLIC_EMAIL_JS_SERVICE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_SERVICE }} 
+          NEXT_PUBLIC_EMAIL_JS_TEMPLATE: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_TEMPLATE }} 
+          NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY }}
+          NEXT_PUBLIC_BD_SUPABASE_SECRET: ${{ secrets.NEXT_PUBLIC_BD_SUPABASE_SECRET }}
+          NEXT_PUBLIC_URL_SUPABASE_PROJECT: ${{ secrets.NEXT_PUBLIC_URL_SUPABASE_PROJECT }}
 
       - name: Test
         run: npm run test

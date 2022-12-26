@@ -13,7 +13,6 @@ const ParticlesComponent = ({
   particlesColor,
 }: particleProps) => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
 
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready

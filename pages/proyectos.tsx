@@ -1,9 +1,11 @@
 import * as React from 'react';
-import ProyectDescriptionComponent from '../components/proyect_description_component/ProyectDescriptionComponent';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackButton from '../components/back_button/BackButton';
+import supabase from '../utils/libs/supabase';
+import { project } from '../context/types';
+import ProjectDescriptionComponent from '../components/project_description_component/ProjectDescriptionComponent';
 
-const Proyectos = () => {
+const projectos = ({ projects }) => {
   return (
     <div className="center-verticaly">
       <BackButton />
@@ -19,9 +21,21 @@ const Proyectos = () => {
           }}
         >
           <div className="w-screen center-verticaly gap-5 m-6">
-            <ProyectDescriptionComponent />
-            <ProyectDescriptionComponent />
-            <ProyectDescriptionComponent />
+            {projects.map((project: project) => (
+              <ProjectDescriptionComponent
+                key={project.id}
+                proyect_description={project.proyect_description}
+                proyect_image={project.proyect_image}
+                proyect_name={project.proyect_name}
+                proyect_link={project.proyect_link}
+                proyect_technologies={project.proyect_technologies}
+                proyect_technologies_description={
+                  project.proyect_technologies_description
+                }
+                created_at={project.created_at}
+                id={project.id}
+              />
+            ))}
           </div>
         </motion.div>
       </AnimatePresence>
@@ -29,4 +43,17 @@ const Proyectos = () => {
   );
 };
 
-export default Proyectos;
+export async function getStaticProps(context) {
+  const getprojects = async () => {
+    const { data: projects, error } = await supabase
+      .from('proyects')
+      .select('*');
+    return projects;
+  };
+  const proyectos = await getprojects();
+console.log(proyectos)
+  return {
+    props: { projects: proyectos }, // will be passed to the page component as props
+  };
+}
+export default projectos;
