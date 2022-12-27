@@ -28,7 +28,7 @@ const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
           <ArticlesIcon className="w-[35px] sm:w-[55px]" />
         </LazyBubleComponent>
         <LazyBubleComponent linkTo="/proyectos">
-          <ProjectsIcon className="w-[35px] sm:w-[55px] " />
+          <ProjectsIcon className="w-[35px] sm:w-[55px] h-[35px] sm:h-[55px]" />
         </LazyBubleComponent>
         <LazyBubleComponent openModalToScreen={openModalToScreen} linkTo="/">
           <AboutMeIcon className="w-[35px] sm:w-[55px]" />
