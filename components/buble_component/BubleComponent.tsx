@@ -41,7 +41,7 @@ const BubleComponent = ({
       </div>
     );
   return (
-    <Link href={linkTo}>
+    <Link aria-label="link externo" href={linkTo}>
       <BubbleInnerPartComponent>{children}</BubbleInnerPartComponent>;
     </Link>
   );
