@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import * as React from 'react';
 import ExperienceLayout from '../components/experience_layout/ExperienceLayout';
 import UseModal from '../utils/hooks/useModal';
-
+import descriptions from '../utils/data/languages.json';
 const LazyCentralHeroComponent = dynamic(
   () => import('../components/central_hero_component/CentralHeroComponent'),
   {
@@ -51,10 +51,7 @@ export default function Home() {
         </div>
         <div className="center-verticaly relative ">
           <LazyCentralHeroComponent />
-          <TextComponent
-            text="My name is Pablo Salgado and I have been working as a Full Stack Developer for the past 2 years. I have a strong passion for building modern and scalable web applications, and I have experience working with a variety of technologies and frameworks."
-            top={241}
-          />
+          <TextComponent text={descriptions.spanish.aboutMe} top={241} />
         </div>
 
         <aside className="fixed sm:right-0 sm:mr-9 sm:mt-9  sm:z-10 sm:bottom-0 bottom-[48px] right-[18px]">

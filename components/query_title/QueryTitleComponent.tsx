@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const QueryTitleComponent = () => {
   return (
-    <h3 className="text-2xl text-white m-8 sm:visible invisible ">
+    <h3 className="text-2xl text-white m-8 sm:inline hidden  ">
       Mi Contenido
     </h3>
   );
