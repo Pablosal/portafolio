@@ -33,7 +33,7 @@ const Modal = ({ closeModalToScreen, render, title, showFooter }: IModal) => {
         aria-hidden="true"
         className=" absolute top-0 left-0 right-0 bottom-0 bg-white m-auto z-50 sm:h-[600px] w-[750px]  max-w-2xl rounded-2xl "
       >
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 h-full flex flex-col ">
+        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 h-full flex w-screen sm:w-auto flex-col ">
           <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               {title}
