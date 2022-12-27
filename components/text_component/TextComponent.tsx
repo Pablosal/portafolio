@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { useMediaQuery } from '../../utils/hooks/useMediaQuery';
 interface TextProps {
   text: string | null;
   top: number;
 }
 
 const TextComponent = ({ text = 'Agregue texto', top }: TextProps) => {
+  const matches = useMediaQuery('(min-width: 480px)');
+
   const textAppear = {
     hidden: { oppacity: 0, y: -50 },
     visible: {
       opacity: 1,
-      y: -600,
+      y: matches ? 2 : -600,
     },
   };
   return (
