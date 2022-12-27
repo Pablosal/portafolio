@@ -28,7 +28,7 @@ const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
         className="center-verticaly gap-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 5, type: 'spring', stiffness: 10 }}
+        transition={{ duration: 5, type: 'spring', stiffness: 100 }}
       >
         <LazyBubleComponent
           linkTo="/articulos"
