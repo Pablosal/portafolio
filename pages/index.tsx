@@ -1,4 +1,3 @@
-'use client';
 import Head from 'next/head';
 import BubleMenuComponent from '../components/buble_menu_component/BubleMenuComponent';
 import StickyContactComponent from '../components/sticky_contact_component/StickyContactComponent';
