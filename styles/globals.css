@@ -8,7 +8,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+.page_container {
+  background-color: #1a1a1c;
+}
 a {
   color: inherit;
   text-decoration: none;

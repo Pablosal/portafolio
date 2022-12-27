@@ -54,7 +54,6 @@ export async function getStaticProps(context) {
     return projects;
   };
   const proyectos = await getprojects();
-  console.log(proyectos);
   return {
     props: { projects: proyectos }, // will be passed to the page component as props
   };
