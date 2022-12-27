@@ -1,9 +1,5 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import desktop_guy from '/public/images/background_guy.svg';
-import mobile_guy from '/public/images/mobile_gou.png';
-import useMediaQuery from '../../utils/hooks/useMediaQuery';
-import Image from 'next/image';
 
 enum CentralMotionStates {
   hidden = 'hidden',
@@ -17,7 +13,6 @@ const CentralHeroComponent = () => {
     },
     coolAppear: { opacity: 1, scale: 1.8 },
   };
-  const matches = useMediaQuery('(min-width: 640px)');
 
   return (
     <motion.div
@@ -25,17 +20,14 @@ const CentralHeroComponent = () => {
       initial={CentralMotionStates.hidden}
       animate={CentralMotionStates.coolAppear}
       transition={{ duration: 0.9, type: 'spring' }}
-      className={`rounded-full bg-red-500  flex justify-center items-center flex-col `}
+      className={`rounded-full bg-red-500 absolute center-verticaly h-[240px] sm:h-[450px] w-[240px] sm:w-[450px]`}
       style={{
-        position: 'absolute',
-        height: matches ? 450 : 240,
-        width: matches ? 450 : 240,
         background:
           'linear-gradient(140.36deg, rgba(1, 255, 72, 0.15) 14.9%, #FF0101 88.91%)',
       }}
     >
       <svg
-        className=" sm:w-[293px] w-[182px]"
+        className="sm:w-[293px] w-[182px]"
         xmlns="http://www.w3.org/2000/svg"
         width="511.56264"
         height="532.44842"

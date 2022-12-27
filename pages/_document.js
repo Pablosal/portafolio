@@ -13,7 +13,6 @@ class MainDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/*Below we add the modal wrapper*/}
           <div id="modal-root"></div>
           <div id="backdrop-root"></div>
         </body>

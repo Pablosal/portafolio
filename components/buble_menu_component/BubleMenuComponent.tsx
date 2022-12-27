@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import ArticlesIcon from '/public/icons/diary-svgrepo-com.svg';
 import AboutMeIcon from '/public/icons/hand-svgrepo-com.svg';
 import ProjectsIcon from '/public/icons/screen-svgrepo-com.svg';
-import AnimationContext from '../../context/contexts/animationContext';
-import useMediaQuery from '../../utils/hooks/useMediaQuery';
 import dynamic from 'next/dynamic';
 const LazyBubleComponent = dynamic(
   () => import('../buble_component/BubleComponent'),
@@ -18,10 +16,6 @@ interface BubleMenuComponentProps {
 }
 
 const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
-  const animationContext = React.useContext(AnimationContext);
-  const matches = useMediaQuery('(min-width: 640px)');
-  const bubbleSize = matches ? 95 : 65;
-  const iconSize = matches ? 55 : 35;
   return (
     <nav className="self-end sm:self-center">
       <motion.div
@@ -30,24 +24,14 @@ const BubleMenuComponent = ({ openModalToScreen }: BubleMenuComponentProps) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 5, type: 'spring', stiffness: 100 }}
       >
-        <LazyBubleComponent
-          linkTo="/articulos"
-          bubbleSize={bubbleSize}
-        >
-          <ArticlesIcon style={{ width: iconSize }} />
+        <LazyBubleComponent linkTo="/articulos">
+          <ArticlesIcon className="w-[35px] sm:w-[55px]" />
         </LazyBubleComponent>
-        <LazyBubleComponent
-          linkTo="/proyectos"
-          bubbleSize={bubbleSize}
-        >
-          <ProjectsIcon style={{ width: iconSize }} />
+        <LazyBubleComponent linkTo="/proyectos">
+          <ProjectsIcon className="w-[35px] sm:w-[55px]" />
         </LazyBubleComponent>
-        <LazyBubleComponent
-          openModalToScreen={openModalToScreen}
-          linkTo="/"
-          bubbleSize={bubbleSize}
-        >
-          <AboutMeIcon style={{ width: iconSize }} />
+        <LazyBubleComponent openModalToScreen={openModalToScreen} linkTo="/">
+          <AboutMeIcon className="w-[35px] sm:w-[55px]" />
         </LazyBubleComponent>
       </motion.div>
     </nav>
