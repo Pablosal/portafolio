@@ -42,7 +42,7 @@ export default function Home() {
           ),
           { title: 'Mi experiencia', showFooter: true }
         )}
-        <div className=" sm:center-verticaly h-full absolute left-[25px] top-[-25px] flex sm:relative z-50">
+        <div className=" sm:center-verticaly h-full absolute left-[25px] top-[-25px] flex sm:relative z-40">
           <LazyQueryTitle />
           <BubleMenuComponent
             openModalToScreen={openModalToScreen}
