@@ -13,20 +13,20 @@ const ProjectDescriptionComponent = ({
 }: project) => {
   return (
     <div
-      style={{ backdropFilter: 'blur(5px)' }}
-      className="w-3/4 sm:grid grid-cols-2  backdrop  sm:w-2/5 bg-white bg-opacity-10 rounded p-3 text-white  border-gray-300 shadow-lg"
+    className="w-3/4   backdrop  sm:w-2/5 bg-white bg-opacity-10 rounded  text-white  border-gray-300 shadow-lg flex flex-col"
+    style={{ backdropFilter: 'blur(5px)' }}
     >
       <div className="image--container center-verticaly pt-12">
-        <Image src={proyect_image} alt="projecto" width={200} height={400}></Image>
+        <Image src={proyect_image} style={{transform:'scale(1.5)'}} alt="projecto" width={200} height={400}></Image>
       </div>
       <div className="description--container flex flex-col pt-12">
         <div className="description h-full overflow-x-clip my-4">
-          <h2 className="text-2xl font-bold h-1/3">{proyect_name}</h2>
-          <p>{proyect_description}</p>
+          <h2 className="text-2xl font-bold h-1/3 text-center">{proyect_name}</h2>
+          <p className='text-justify p-6'>{proyect_description}</p>
         </div>
         <div className="technologies mb-4">
-          <h2 className="text-2xl font-bold h-1/3">Tecnologias</h2>
-          <p>{proyect_technologies_description}</p>
+          <h2 className="text-2xl font-bold h-1/3 text-center">Tecnologias</h2>
+          <p className='text-justify p-6'>{proyect_technologies_description}</p>
         </div>
         <div className="button--to h-1/3 flex justify-center align-center flex-col">
           <Link target={"_blank"}
