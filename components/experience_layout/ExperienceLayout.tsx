@@ -3,7 +3,7 @@ import languages from '../../utils/data/languages.json';
 const ExperienceLayout = () => {
   return (
     <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 h-full">
-      {languages.spanish.experience.map((job) => (
+      {languages.english.experience.map((job) => (
         <div key={job.title} className="p-6 space-y-6">
           <h3 className="mb-4 font-extrabold tracking-tight leading-none text-gray-900 text-2xl dark:text-white">
             {job.title}
@@ -12,7 +12,7 @@ const ExperienceLayout = () => {
             {job.subtitle}
           </h4>
           <h5 className="mb-4 font-bold tracking-tight leading-none text-gray-900 text-md dark:text-white">
-            Responsabilidades
+            Responsabilities
           </h5>
           <ul>
             {job.responsabilities.map((responsability) => (
@@ -25,7 +25,7 @@ const ExperienceLayout = () => {
             ))}
           </ul>
           <h5 className="mb-4 font-bold tracking-tight leading-none text-gray-900 text-md dark:text-white">
-            Logros Clave
+            Key Archivements
           </h5>
           <ul>
             {job.keyPoints.map((keyPoint) => (
